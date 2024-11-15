@@ -162,7 +162,7 @@ def get_activity(model_name, sequence_list) -> list:
     model_name_full = model_name + 'best_model'
     print(model_name_full)
     scaler_name = model_name + 'minmax_scaler.pkl'
-    scaler = joblib.load(scaler_name))
+    scaler = joblib.load(scaler_name)
     model = load_model(model_name_full)
         
     # 因为这个list里又两个element我们需要第二个，所以我只需要把吧这个拿出来，然后split
@@ -208,17 +208,11 @@ def predict():
     model_id = int_features[0]
     model_name, activity_name = model_selection(model_id)
     model_name_full = model_name + 'best_model.keras'
-    try:
-        model = load_model(os.path.join(os.getcwd(),model_name_full))
-        print(model_name_full)
-    except OSError as e:
-        print(f"Failed to load model: {e}")
+    model = load_model(model_name_full)
+    print(model_name_full)
     scaler_name = model_name + 'minmax_scaler.pkl'
-    try:
-        scaler = joblib.load(os.path.join(os.getcwd(),scaler_name))
-    except OSError as e:
-        print(f"Failed to load scaler: {e}")
-        print(scaler_name)
+    scaler = joblib.load(scaler_name)
+    print(scaler_name)
     scaler = joblib.load(os.path.join(os.getcwd(),scaler_name))
     sequence_list = int_features[1].split(',')  # 因为这个list里又两个element我们需要第二个，所以我只需要把吧这个拿出来，然后split
     # 另外需要注意，这个地方，网页上输入的时候必须要是AAA,CCC,SAS, 这个格式，不同的sequence的区分只能使用逗号，其他的都不可以

@@ -9,4 +9,4 @@ build:
       - pip3 install tensorflow==2.16.2
       - pip3 install keras==3.6.0
 run: 
-  command: gunicorn --timeout 1000 --keep-alive 60 app:app
+  command: python server.py

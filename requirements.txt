@@ -2,9 +2,7 @@ gunicorn==20.1.0
 openpyxl
 joblib
 fair-esm
-tensorflow
 torch --index-url https://download.pytorch.org/whl/cpu
 Flask
-keras
 pandas
 scikit-learn

@@ -10,7 +10,7 @@ build:
       - pip install joblib
       - pip install fair-esm==2.0.0
       - pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cpu
-      - pip install Flask==2.2.2
+      - pip install Flask==2.0.1
       - pip install pandas
       - pip install scikit-learn
       - pip install urllib3<2.0

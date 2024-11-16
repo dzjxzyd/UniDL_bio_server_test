@@ -16,6 +16,6 @@ build:
       - pip install werkzeug==2.2.2
       - pip install urllib3==1.26.6
 run: 
-  command: python app.py
+  command: gunicorn --timeout 1000 --keep-alive 60 app:app
 
 
